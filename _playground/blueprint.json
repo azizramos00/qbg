@@ -24,13 +24,8 @@
 			"step": "installTheme",
 			"themeZipFile": {
 				"resource": "url",
-				"url": "https://github-proxy.com/proxy/?repo=ndiego/queens-botanical-block-theme"
+				"url": "https://raw.githubusercontent.com/azizramos00/qbg/main/_playground/queens-botanical-block-theme.zip"
 			}
-		},
-		{
-			"step": "mv",
-			"fromPath": "/wordpress/wp-content/themes/queens-botanical-block-theme-main",
-			"toPath": "/wordpress/wp-content/themes/queens-botanical-block-theme"
 		},
 		{
 			"step": "activateTheme",

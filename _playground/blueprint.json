@@ -6,6 +6,17 @@
 		"wp": "latest"
 	},
 	"login": true,
+	"features": {
+		"networking": true
+	},
+	"plugins": [
+		"create-block-theme",
+		"the-events-calendar",
+		"ultimate-addons-for-gutenberg",
+		"gtranslate",
+		"opening-hours",
+		"wordpress-importer"
+	],
 	"steps": [
 		{
 			"step": "setSiteOptions",
@@ -30,16 +41,6 @@
 		{
 			"step": "activateTheme",
 			"themeFolderName": "queens-botanical-block-theme"
-		},
-		{
-			"step": "installPlugin",
-			"pluginZipFile": {
-				"resource": "wordpress.org/plugins",
-				"slug": "create-block-theme"
-			},
-			"progress": {
-				"weight": 2
-			}
 		}
 	]
 }

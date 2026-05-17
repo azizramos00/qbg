@@ -1,0 +1,382 @@
+/*
+ * Header / template part: parts/header.html
+ * Targets the inner flex row: header  .wp-block-group  .wp-block-group:first|last-child
+ * (logo/title column first, nav/search column last). Keep that order if you edit the markup.
+ * Requires tokens.css for var(--qbb-*).
+ */
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100000;
+}
+
+body.admin-bar .site-header {
+	top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+	body.admin-bar .site-header {
+		top: 46px;
+	}
+}
+
+.site-header {
+	flex: 0 0 auto;
+	flex-shrink: 0;
+	max-width: 100%;
+	min-width: 0;
+	padding: 0 calc(var(--qbb-layout-full-width-spacing) / 2);
+}
+
+.site-header .wp-block-site-logo {
+	flex-shrink: 0;
+	line-height: 0;
+}
+
+.site-header .wp-block-site-logo .custom-logo-link,
+.site-header .wp-block-site-logo a {
+	display: inline-block;
+	line-height: 0;
+}
+
+.site-header .wp-block-site-logo img {
+	display: block;
+	height: auto;
+	max-height: 5rem;
+	inline-size: 100%;
+}
+
+.site-header .wp-block-site-title {
+	flex-shrink: 1;
+	min-width: 0;
+}
+
+/* Navbar (Figma): utility row — inline “Open today …” beside nav/search. */
+.site-header .site-header__actions {
+	align-items: center;
+	display: flex;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	gap: var(--qbb-space-s) var(--qbb-space-m);
+	justify-content: flex-end;
+	min-width: 0;
+}
+
+.site-header .site-header__actions .wp-block-queens-botanical-block-hours-of-operation {
+	flex: 0 1 auto;
+	min-width: 0;
+}
+
+.site-header .site-header__actions .site-header__navigation {
+	align-items: center;
+	display: flex;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	gap: var(--qbb-space-s);
+	justify-content: flex-end;
+	min-width: 0;
+}
+
+.has-modal-open .admin-bar .is-menu-open .wp-block-navigation__responsive-dialog {
+	margin-top: 0 !important;
+}
+
+/*
+ * Responsive nav overlay: fill viewport below the sticky header (not over it).
+ * --qbb-navigation-overlay-top is set in tokens.css (admin bar + --qbb-header-strip-height).
+ */
+.site-header .wp-block-navigation__responsive-container.is-menu-open {
+	top: var(--qbb-navigation-overlay-top) !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	height: auto !important;
+	max-height: none !important;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	padding-top: var(--qbb-space-m) !important;
+}
+
+/* Inner “Close” is redundant once the open control toggles (see functions.php). Escape still closes. */
+.site-header .wp-block-navigation__responsive-container-close {
+	display: none !important;
+}
+
+.site-header .wp-block-navigation__responsive-container-open svg {
+	display: block;
+}
+
+.site-header .wp-block-navigation__responsive-container-open[aria-expanded="true"] svg {
+	opacity: 0;
+}
+
+.site-header .wp-block-navigation__responsive-container-open[aria-expanded="true"]::before,
+.site-header .wp-block-navigation__responsive-container-open[aria-expanded="true"]::after {
+	content: "";
+	position: absolute;
+	width: 1.25rem;
+	height: 2px;
+	background: currentColor;
+	border-radius: 1px;
+}
+
+.site-header .wp-block-navigation__responsive-container-open[aria-expanded="true"]::before {
+	transform: rotate(45deg);
+}
+
+.site-header .wp-block-navigation__responsive-container-open[aria-expanded="true"]::after {
+	transform: rotate(-45deg);
+}
+
+.site-header .wp-block-navigation .wp-block-navigation-item__content {
+	color: var(--wp--preset--color--english-walnut);
+	text-decoration: none;
+}
+
+.site-header .wp-block-navigation .wp-block-navigation-item__content:hover,
+.site-header .wp-block-navigation .wp-block-navigation-item__content:focus {
+	color: var(--wp--preset--color--rose);
+}
+
+.site-header .wp-block-navigation-item__label {
+	letter-spacing: 0;
+}
+
+/* Desktop dropdown only — keep out of the responsive overlay (small viewports). */
+@media (min-width: 768px) {
+	.site-header .wp-block-navigation .has-child .wp-block-navigation-submenu__toggle[aria-expanded="true"] ~ .wp-block-navigation__submenu-container {
+		min-width: 400px;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	}
+}
+
+/*
+ * Core Navigation flattens submenus in the overlay (.is-menu-open): every .has-child submenu
+ * is forced visible (wp-includes/blocks/navigation/style.css ~329). Restore “open on click”
+ * for items with .open-on-click (Navigation links + Page list).
+ */
+/* Core uses --navigation-layout-justification-setting for overlay column alignment (e.g. flex-end when nav is “right”). */
+.site-header .wp-block-navigation__responsive-container.is-menu-open {
+	--navigation-layout-justification-setting: flex-start;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container,
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-page-list {
+	width: 100%;
+	max-width: 100%;
+	align-items: flex-start;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item,
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-pages-list__item {
+	width: 100%;
+	max-width: 100%;
+	align-self: stretch;
+	align-items: flex-start;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open :is(.wp-block-navigation-item__content, .wp-block-pages-list__item__link) {
+	box-sizing: border-box;
+	justify-content: flex-start;
+	text-align: start;
+	width: 100%;
+	max-width: 100%;
+	padding-left: 0;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__label {
+	text-align: left;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	align-items: flex-start;
+	width: 100%;
+	max-width: 100%;
+}
+
+/* Open-on-click: parent label (toggle) and chevron on one row, space-between, full overlay width. */
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .open-on-click.has-child {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	column-gap: var(--qbb-space-s, 1rem);
+	width: 100%;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .open-on-click.has-child .wp-block-navigation-submenu__toggle {
+	grid-column: 1;
+	justify-self: stretch;
+	width: 100%;
+	min-width: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: start;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .open-on-click .wp-block-navigation__submenu-icon {
+	grid-column: 2;
+	justify-self: end;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .open-on-click.has-child .wp-block-navigation-submenu__toggle:not([aria-expanded="true"]) ~ .wp-block-navigation__submenu-container {
+	grid-column: 1 / -1;
+	border: none;
+	height: 0;
+	margin: 0;
+	min-height: 0;
+	min-width: 0 !important;
+	max-height: 0;
+	opacity: 0 !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	pointer-events: none;
+	position: absolute;
+	left: -1px;
+	top: 100%;
+	visibility: hidden !important;
+	width: 0 !important;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .open-on-click.has-child .wp-block-navigation-submenu__toggle[aria-expanded="true"] ~ .wp-block-navigation__submenu-container {
+	grid-column: 1 / -1;
+	height: auto !important;
+	margin: 0;
+	max-height: none;
+	min-height: unset;
+	min-width: 0 !important;
+	opacity: 1 !important;
+	overflow: visible !important;
+	padding-left: 2rem !important;
+	padding-right: 2rem !important;
+	padding-top: var(--wp--style--block-gap, 0.5em) !important;
+	padding-bottom: 0 !important;
+	pointer-events: auto;
+	position: static !important;
+	left: auto;
+	top: auto;
+	visibility: visible !important;
+	width: 100% !important;
+	max-width: 100%;
+}
+
+.site-header .wp-block-navigation .current-menu-item .wp-block-navigation-item__content,
+.site-header .wp-block-navigation .current-menu-item a {
+	color: var(--wp--preset--color--clover);
+}
+
+.site-header .wp-block-search__inside-wrapper {
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--sage);
+	overflow: hidden;
+}
+
+.site-header .wp-block-search__input {
+	border: none;
+	background: transparent;
+	min-height: var(--qbb-header-control-height);
+	padding-inline: var(--qbb-space-s);
+}
+
+.site-header .wp-block-search__button {
+	background: var(--wp--preset--color--english-walnut);
+	color: var(--wp--preset--color--base);
+	border: none;
+	min-height: var(--qbb-header-control-height);
+	padding-inline: var(--qbb-space-sm);
+}
+
+.site-header .wp-block-search__button:hover,
+.site-header .wp-block-search__button:focus {
+	background: var(--wp--preset--color--clover);
+	color: var(--wp--preset--color--base);
+}
+
+.site-header .wp-block-navigation-item__label {
+	text-transform: initial;
+}
+
+.site-header .wp-block-search__inside-wrapper {
+	border: none;
+}
+
+.site-header .wp-block-search__button svg {
+	font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+	.site-header {
+		padding: 1rem 0.5rem;
+	}
+
+	.site-header .wp-block-group {
+		flex-wrap: wrap;
+	}
+
+	.site-header .wp-block-group .wp-block-group:last-child {
+		flex: 1 1 auto;
+		justify-content: flex-end;
+		min-width: min(12rem, 100%);
+		width: auto;
+	}
+
+	.site-header .wp-block-search {
+		flex: 1 0 100%;
+		width: 100%;
+		max-width: 100%;
+		order: 3;
+	}
+
+	.site-header .wp-block-site-logo img {
+		max-height: 3rem;
+	}
+
+	/* Open control: show hamburger by default, “X” when expanded (aria-expanded from Interactivity API). */
+	.site-header .wp-block-navigation__responsive-container-open {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var(--qbb-touch-target-min);
+		min-height: var(--qbb-touch-target-min);
+	}
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+	.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		display: none !important;
+	}
+
+	.wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: block !important;
+	}
+}
+
+@media (min-width: 768px) {
+	.wp-block-navigation .has-child .wp-block-navigation__submenu-container>.wp-block-navigation-item>.wp-block-navigation-item__content {
+		justify-content: end;
+		text-align: right;
+	}
+}
+
+@media (max-width: 1107px) {
+	.site-Header--top-rack {
+		display: none !important;
+	}
+}

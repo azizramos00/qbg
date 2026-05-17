@@ -1,0 +1,86 @@
+.highlight-section-bg {
+  position: absolute;
+  top: 0;
+}
+
+.highlight-section-container {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-position-y: -90% !important;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 44.29%), linear-gradient(180deg, #A6E7FF 0%, rgba(255, 255, 255, 0.00) 66.85%), url(<path-to-image>) #d3d3d300 -17px 260.987px / 101.181% 91.034% no-repeat;
+  }
+}
+
+.plant-grid-card {
+  height: 100%;
+}
+
+.plant-grid-card img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.site-HomeHero--container {
+  flex: 0 0 auto;
+	flex-shrink: 0;
+	max-width: 100%;
+	min-width: 0;
+	padding: 0 calc(var(--qbb-layout-full-width-spacing) / 2);
+  height: calc(100vh - 128px);
+}
+ 
+.site-HomeHero--container .wp-block-cover__inner-container {
+  height: 100%;
+}
+
+.featured-events-title--sticky {
+  position: sticky;
+  top: 3rem;
+}
+
+@media (max-width: 992px) {
+
+  .site-exploreGarden--container {
+    padding-inline: 0;
+
+    h2 {
+      margin-left: calc(var(--qbb-layout-full-width-spacing) / 2);
+    }
+  }
+
+  .site-homeActions--container {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > div {
+      min-width: 320px;
+
+      .wp-block-group {
+        min-height: 420px !important;
+      }
+    }
+
+    > div:first-child {
+      margin-left: calc(var(--qbb-layout-full-width-spacing) / 2);
+    }
+
+    > div:last-child {
+      margin-right: calc(var(--qbb-layout-full-width-spacing) / 2);
+    }
+  }
+}
+
+

@@ -1,0 +1,7 @@
+.site-container--full-width {
+	flex: 0 0 auto;
+	flex-shrink: 0;
+	max-width: 100%;
+	min-width: 0;
+	padding: 0 calc(var(--qbb-layout-full-width-spacing) / 2);
+}

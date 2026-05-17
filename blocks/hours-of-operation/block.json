@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "queens-botanical-block/hours-of-operation",
+	"version": "1.0.0",
+	"title": "Hours of operation",
+	"category": "widgets",
+	"icon": "clock",
+	"description": "Weekly open and close times, with optional emphasis on today.",
+	"keywords": [ "hours", "open", "closed", "schedule" ],
+	"textdomain": "queens-botanical-block",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"anchor": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		}
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTodaySummary": {
+			"type": "boolean",
+			"default": true
+		},
+		"highlightToday": {
+			"type": "boolean",
+			"default": true
+		},
+		"schedule": {
+			"type": "array",
+			"default": [
+				{ "dayIndex": 1, "closed": false, "openTime": "09:00", "closeTime": "17:00" },
+				{ "dayIndex": 2, "closed": false, "openTime": "09:00", "closeTime": "17:00" },
+				{ "dayIndex": 3, "closed": false, "openTime": "09:00", "closeTime": "17:00" },
+				{ "dayIndex": 4, "closed": false, "openTime": "09:00", "closeTime": "17:00" },
+				{ "dayIndex": 5, "closed": false, "openTime": "09:00", "closeTime": "17:00" },
+				{ "dayIndex": 6, "closed": false, "openTime": "10:00", "closeTime": "16:00" },
+				{ "dayIndex": 7, "closed": true, "openTime": "", "closeTime": "" }
+			]
+		}
+	},
+	"example": {
+		"attributes": {
+			"heading": "Garden hours",
+			"showTodaySummary": true,
+			"highlightToday": true
+		}
+	},
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

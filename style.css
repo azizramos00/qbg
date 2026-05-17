@@ -1,0 +1,25 @@
+/*
+Theme Name: Queens Botanical Block Theme
+Theme URI: https://queensbotanical.org/
+Author: Queens Botanical Garden
+Author URI: https://queensbotanical.org/
+Description: Full Site Editing block theme for Queens Botanical Garden. Global styles live in theme.json; use the Site Editor for layout and templates.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: queens-botanical-block
+Tags: full-site-editing, block-patterns, block-styles, editor-style, wide-blocks
+*/
+
+/*
+ * Component styles load from assets/css/components/*.css via functions.php
+ * (wp_enqueue_style + add_editor_style). Add new files there and register them
+ * in qbb_style_components() — each entry has path + deps (tokens first; layout uses token vars).
+ */
+
+ .wp-site-blocks {
+   padding: 0 0;
+ }

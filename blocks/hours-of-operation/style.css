@@ -1,0 +1,222 @@
+/*
+ * Hours of operation — queens-botanical-block/hours-of-operation
+ * Matches Garden / QBG card language (cream panel, walnut type, clover accents).
+ */
+
+.wp-block-queens-botanical-block-hours-of-operation.qbb-hours--garden {
+	border-radius: var(--qbb-card-radius);
+	box-shadow: var(--qbb-card-shadow);
+	box-sizing: border-box;
+	font-family: var(--wp--preset--font-family--mark-pro, inherit);
+	padding: var(--qbb-space-m) var(--qbb-space-l);
+}
+
+/* Default surface when block colors not set in editor */
+.wp-block-queens-botanical-block-hours-of-operation.qbb-hours--garden:not(.has-background) {
+	background-color: var(--wp--preset--color--cream);
+}
+
+.wp-block-queens-botanical-block-hours-of-operation.qbb-hours--garden:not(.has-text-color) {
+	color: var(--wp--preset--color--english-walnut);
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__sr-only {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__heading {
+	color: var(--wp--preset--color--english-walnut);
+	font-weight: 900;
+	letter-spacing: -0.02em;
+	line-height: 1.15;
+	margin: 0 0 var(--qbb-space-s);
+}
+
+/* “Today” callout — sage panel, two-line hierarchy */
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__today {
+	background-color: var(--wp--preset--color--sage);
+	border-radius: var(--qbb-footer-panel-radius, 1.5rem);
+	box-sizing: border-box;
+	margin: 0 0 var(--qbb-space-m);
+	padding: var(--qbb-space-s) var(--qbb-space-m);
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__today-top {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 0.65rem;
+	margin-bottom: 0.25rem;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__today-kicker {
+	color: var(--wp--preset--color--clover);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__today-wday {
+	color: var(--wp--preset--color--english-walnut);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 600;
+	opacity: 0.85;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__today-detail {
+	color: var(--wp--preset--color--english-walnut);
+	font-size: var(--qbb-text-medium, 1.125rem);
+	font-weight: 700;
+	line-height: 1.35;
+	margin: 0;
+}
+
+/* Schedule list */
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__row {
+	align-items: baseline;
+	box-sizing: border-box;
+	display: grid;
+	gap: var(--qbb-space-sm) var(--qbb-space-m);
+	grid-template-columns: minmax(3.25rem, auto) minmax(0, 1fr);
+	padding: 0.65rem 0;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__row + .qbb-hours__row {
+	border-top: 1px solid rgba(66, 45, 39, 0.1);
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__row.is-today {
+	background: linear-gradient(
+		90deg,
+		color-mix(in srgb, var(--wp--preset--color--holly) 22%, transparent) 0,
+		color-mix(in srgb, var(--wp--preset--color--sage) 55%, transparent) 0.35rem,
+		color-mix(in srgb, var(--wp--preset--color--sage) 35%, transparent) 0.35rem,
+		color-mix(in srgb, var(--wp--preset--color--sage) 18%, transparent) 100%
+	);
+	border-radius: 0.5rem;
+	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--wp--preset--color--holly) 25%, transparent);
+	margin-inline: calc(var(--qbb-space-xs) * -1);
+	padding-inline: var(--qbb-space-xs);
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__day {
+	color: var(--wp--preset--color--clover);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__day-abbr {
+	display: inline-block;
+	min-width: 2.25rem;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__times {
+	color: var(--wp--preset--color--english-walnut);
+	font-size: var(--qbb-text-small, 1rem);
+	font-weight: 600;
+	margin: 0;
+	text-align: right;
+}
+
+@media (min-width: 480px) {
+	.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__row {
+		grid-template-columns: 5.5rem 1fr;
+	}
+}
+
+/* Editor: controls next to day name */
+.editor-styles-wrapper .wp-block-queens-botanical-block-hours-of-operation .qbb-hours__row,
+.block-editor-block-list__layout .wp-block-queens-botanical-block-hours-of-operation .qbb-hours__row {
+	align-items: start;
+	grid-template-columns: minmax(4rem, 1fr) minmax(0, 2.5fr);
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__editor-row {
+	display: flex;
+	flex-direction: column;
+	gap: var(--qbb-space-xs, 0.5rem);
+	min-width: 0;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__editor-row .components-base-control {
+	margin-bottom: 0;
+}
+
+/* Editor preview “today” note */
+.wp-block-queens-botanical-block-hours-of-operation .qbb-hours__today--editor-note {
+	background-color: var(--wp--preset--color--sage);
+	border-radius: var(--qbb-footer-panel-radius, 1.5rem);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	line-height: 1.4;
+	margin: 0 0 var(--qbb-space-m);
+	opacity: 0.95;
+	padding: var(--qbb-space-s) var(--qbb-space-m);
+}
+
+/*
+ * Figma Navbar/Desktop — “Open today 12 pm - 6 pm” (Mark Pro Bold 16px, black, px-16 py-8).
+ */
+.wp-block-queens-botanical-block-hours-of-operation.is-style-qbb-hours-header-inline {
+	background: none;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 0.5rem 1rem;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation.is-style-qbb-hours-header-inline:not(.has-text-color) .qbb-hours__inline {
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-queens-botanical-block-hours-of-operation.is-style-qbb-hours-header-inline .qbb-hours__inline-status {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	text-align: center;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation.is-style-qbb-hours-header-inline .qbb-hours__inline {
+	font-family: var(--wp--preset--font-family--mark-pro, inherit);
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.25;
+	margin: 0;
+	white-space: normal;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation.is-style-qbb-hours-header-inline .qbb-hours__inline--primary {
+	font-weight: 700;
+}
+
+.wp-block-queens-botanical-block-hours-of-operation.is-style-qbb-hours-header-inline .qbb-hours__inline--secondary {
+	font-size: 0.9375rem;
+	font-weight: 600;
+	opacity: 0.92;
+}
+
+@media (max-width: 767px) {
+	.wp-block-queens-botanical-block-hours-of-operation.is-style-qbb-hours-header-inline .qbb-hours__inline-status {
+		align-items: flex-end;
+		text-align: right;
+	}
+}

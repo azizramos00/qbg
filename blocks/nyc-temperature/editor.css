@@ -1,0 +1,6 @@
+/* Editor canvas — matches front layout lightly */
+.block-editor-block-list__layout .wp-block-queens-botanical-block-nyc-temperature.qbb-nyc-temp {
+	border: 1px dashed color-mix(in srgb, currentColor 25%, transparent);
+	border-radius: 0.5rem;
+	padding: var(--qbb-space-s, 1rem);
+}

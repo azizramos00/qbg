@@ -1,0 +1,76 @@
+/*
+ * Sizing tokens — rem first, px noted at 16px root (browser default).
+ * Mirrors theme.json settings.spacing.spacingSizes and typography fontSizes (static size).
+ * Prefer var(--wp--preset--spacing|font-size--*) in blocks; use --qbb-* in custom CSS.
+ */
+
+:root {
+	/* -------------------------------------------------------------------------
+	   Root: 1rem = 16px when user font size is default
+	   ------------------------------------------------------------------------- */
+	--qbb-rem-px: 16;
+
+	/* -------------------------------------------------------------------------
+	   Spacing (theme.json spacingSizes)
+	   ------------------------------------------------------------------------- */
+	--qbb-space-xs: 0.5rem; /* 8px */
+	--qbb-space-sm: 0.75rem; /* 12px */
+	--qbb-space-s: 1rem; /* 16px */
+	--qbb-space-m: 1.5rem; /* 24px */
+	--qbb-space-l: 2rem; /* 32px */
+	--qbb-space-xl: 3rem; /* 48px */
+	--qbb-space-xxl: 4rem; /* 64px */
+
+	/* -------------------------------------------------------------------------
+	   Typography — static rem (fluid clamp lives in theme.json for presets)
+	   ------------------------------------------------------------------------- */
+	--qbb-text-small: 1rem; /* 16px */
+	--qbb-text-medium: 1.125rem; /* 18px */
+	--qbb-text-large: 1.5rem; /* 24px */
+	--qbb-text-x-large: 2.25rem; /* 36px */
+	--qbb-text-huge: 3.5rem; /* 56px */
+
+	/* Nav / UI text */
+	--qbb-text-nav: 0.8125rem; /* 13px */
+
+	/* -------------------------------------------------------------------------
+	   Layout (theme.json settings.layout)
+	   ------------------------------------------------------------------------- */
+	--qbb-layout-content: 800px;
+	--qbb-layout-wide: 1200px;
+	--qbb-layout-full: 1600px;
+	--qbb-layout-full-width-max: min(calc(85vw - (100vw - 100%)), 1600px);
+	--qbb-layout-full-width-spacing: calc((100% - var(--qbb-layout-full-width-max)) / 2);
+
+	/* -------------------------------------------------------------------------
+	   Component helpers (not in theme.json — use in components only)
+	   ------------------------------------------------------------------------- */
+	--qbb-logo-max-height: 3rem; /* 48px */
+	--qbb-header-control-height: 2.5rem; /* 40px */
+	--qbb-touch-target-min: 2.75rem; /* 44px — accessibility */
+
+	/* Sticky header strip — tune to match one-row .site-header height (padding + logo/nav row). */
+	--qbb-header-strip-height: 5rem;
+	/* WP admin bar height when logged in (mirrors body.admin-bar .site-header top). */
+	--qbb-wp-admin-bar-offset: 0px;
+	/* Top edge of the nav overlay panel = admin bar + header strip. */
+	--qbb-navigation-overlay-top: calc(var(--qbb-wp-admin-bar-offset) + var(--qbb-header-strip-height));
+
+	/* Footer hero panel (Figma rounded card) */
+	--qbb-footer-panel-radius: 1.5rem; /* 24px */
+
+	/* Content cards (Garden card block style — patterns/garden-card.php) */
+	--qbb-card-radius: var(--qbb-footer-panel-radius);
+	--qbb-card-shadow: 0 0.375rem 1.5rem rgba(66, 45, 39, 0.08);
+	--qbb-card-shadow-hover: 0 0.75rem 2rem rgba(66, 45, 39, 0.14);
+}
+
+body.admin-bar {
+	--qbb-wp-admin-bar-offset: 32px;
+}
+
+@media screen and (max-width: 767px) {
+	body.admin-bar {
+		--qbb-wp-admin-bar-offset: 46px;
+	}
+}

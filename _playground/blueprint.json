@@ -1,0 +1,50 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/wp-admin/site-editor.php",
+	"preferredVersions": {
+		"php": "8.0",
+		"wp": "latest"
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "Queens Botanical Block Theme"
+			}
+		},
+		{
+			"step": "updateUserMeta",
+			"meta": {
+				"admin_color": "modern"
+			},
+			"userId": 1
+		},
+		{
+			"step": "installTheme",
+			"themeZipFile": {
+				"resource": "url",
+				"url": "https://github-proxy.com/proxy/?repo=ndiego/queens-botanical-block-theme"
+			}
+		},
+		{
+			"step": "mv",
+			"fromPath": "/wordpress/wp-content/themes/queens-botanical-block-theme-main",
+			"toPath": "/wordpress/wp-content/themes/queens-botanical-block-theme"
+		},
+		{
+			"step": "activateTheme",
+			"themeFolderName": "queens-botanical-block-theme"
+		},
+		{
+			"step": "installPlugin",
+			"pluginZipFile": {
+				"resource": "wordpress.org/plugins",
+				"slug": "create-block-theme"
+			},
+			"progress": {
+				"weight": 2
+			}
+		}
+	]
+}

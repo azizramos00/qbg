@@ -36,8 +36,8 @@
 	/* -------------------------------------------------------------------------
 	   Layout (theme.json settings.layout)
 	   ------------------------------------------------------------------------- */
-	--qbb-layout-content: 800px;
-	--qbb-layout-wide: 1200px;
+	--qbb-layout-content: min(calc(85vw - (100vw - 100%)), 1600px);
+	--qbb-layout-wide: min(calc(85vw - (100vw - 100%)), 1600px);
 	--qbb-layout-full: 1600px;
 	--qbb-layout-full-width-max: min(calc(85vw - (100vw - 100%)), 1600px);
 	--qbb-layout-full-width-spacing: calc((100% - var(--qbb-layout-full-width-max)) / 2);

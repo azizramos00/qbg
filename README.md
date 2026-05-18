@@ -6,7 +6,7 @@ Full Site Editing block theme for [Queens Botanical Garden](https://queensbotani
 
 ## Try it in WordPress Playground
 
-Launch a live demo (latest WordPress, theme installed and activated, Site Editor open):
+Launch a live demo (theme, plugins, sample pages, and blog posts):
 
 **[Open demo in Playground →](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/azizramos00/qbg/main/_playground/blueprint.json)**
 
@@ -26,6 +26,8 @@ The Playground blueprint installs and activates these plugins (matching the loca
 To add or remove plugins, edit the `plugins` array in `_playground/blueprint.json`. Use a [wordpress.org slug](https://wordpress.org/plugins/) or a public zip URL for custom plugins.
 
 Spectra’s setup wizard is skipped automatically via a blueprint step that marks onboarding complete.
+
+Each Playground session seeds sample content: **Home** (static front page), **Blog** (posts page), **About**, **Contact**, **Programs & Events**, two calendar events, and five blog posts.
 
 ## Requirements
 

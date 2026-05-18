@@ -68,6 +68,28 @@ function qbb_setup(): void {
 add_action( 'after_setup_theme', 'qbb_setup' );
 
 /**
+ * Site Identity in the Customizer: logo and site icon only (no title/tagline text fields).
+ * Site name and tagline remain editable under Settings → General.
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance.
+ */
+function qbb_customize_register( WP_Customize_Manager $wp_customize ): void {
+	$text_controls = array(
+		'blogname',
+		'blogdescription',
+		'header_text',
+		'display_header_text',
+	);
+
+	foreach ( $text_controls as $control_id ) {
+		if ( $wp_customize->get_control( $control_id ) ) {
+			$wp_customize->remove_control( $control_id );
+		}
+	}
+}
+add_action( 'customize_register', 'qbb_customize_register', 999 );
+
+/**
  * Use toggle + aria-expanded on the responsive “open menu” control (core defaults to open-only).
  * Lets one button open/close the overlay; pairs with header.css (hide inner close, icon swap).
  *
@@ -288,12 +310,21 @@ add_action( 'wp_enqueue_scripts', 'qbb_enqueue_styles' );
  * Register block pattern categories.
  */
 function qbb_register_pattern_categories(): void {
-	register_block_pattern_category(
-		'queens-botanical-block',
-		array(
-			'label' => __( 'Queens Botanical Block', 'queens-botanical-block' ),
-		)
+	$categories = array(
+		'queens-botanical-block' => __( 'Queens Botanical Block', 'queens-botanical-block' ),
+		'home'                   => __( 'Home', 'queens-botanical-block' ),
+		'featured-events'        => __( 'Featured Events', 'queens-botanical-block' ),
+		'botanical-highlights'   => __( 'Botanical Highlights', 'queens-botanical-block' ),
 	);
+
+	foreach ( $categories as $slug => $label ) {
+		register_block_pattern_category(
+			$slug,
+			array(
+				'label' => $label,
+			)
+		);
+	}
 }
 add_action( 'init', 'qbb_register_pattern_categories' );
 

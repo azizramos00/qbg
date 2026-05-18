@@ -1,7 +1,7 @@
 /*
  * Header / template part: parts/header.html
  * Targets the inner flex row: header  .wp-block-group  .wp-block-group:first|last-child
- * (logo/title column first, nav/search column last). Keep that order if you edit the markup.
+ * (logo column first, nav/search column last). Keep that order if you edit the markup.
  * Requires tokens.css for var(--qbb-*).
  */
 
@@ -48,8 +48,7 @@ body.admin-bar .site-header {
 }
 
 .site-header .wp-block-site-title {
-	flex-shrink: 1;
-	min-width: 0;
+	display: none;
 }
 
 /* Navbar (Figma): utility row — inline “Open today …” beside nav/search. */

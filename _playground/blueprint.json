@@ -1,6 +1,6 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
-	"landingPage": "/wp-admin/site-editor.php",
+	"landingPage": "/",
 	"preferredVersions": {
 		"php": "8.1",
 		"wp": "latest"
@@ -45,6 +45,18 @@
 		{
 			"step": "runPHP",
 			"code": "<?php require_once '/wordpress/wp-load.php'; update_option( 'spectra_onboarding', array( 'completed' => true ) ); update_option( '__uagb_do_redirect', false ); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require_once '/wordpress/wp-load.php'; $seed = get_template_directory() . '/_playground/seed-demo-content.php'; if ( is_readable( $seed ) ) { require $seed; } ?>",
+			"progress": {
+				"weight": 3,
+				"caption": "Creating sample pages and posts…"
+			}
+		},
+		{
+			"step": "login",
+			"username": "admin"
 		}
 	]
 }

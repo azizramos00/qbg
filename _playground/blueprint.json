@@ -1,6 +1,6 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
-	"landingPage": "/wp-admin/site-editor.php",
+	"landingPage": "/",
 	"preferredVersions": {
 		"php": "8.1",
 		"wp": "latest"
@@ -41,6 +41,21 @@
 		{
 			"step": "activateTheme",
 			"themeFolderName": "queens-botanical-block-theme"
+		},
+		{
+			"step": "importWxr",
+			"file": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/azizramos00/qbg/main/_playground/demo-content.xml"
+			},
+			"progress": {
+				"weight": 10,
+				"caption": "Importing demo content…"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require_once '/wordpress/wp-load.php'; $home = get_page_by_path( 'home-2-2-2', OBJECT, 'page' ); if ( $home instanceof WP_Post ) { update_option( 'show_on_front', 'page' ); update_option( 'page_on_front', $home->ID ); } flush_rewrite_rules(); ?>"
 		}
 	]
 }

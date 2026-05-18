@@ -6,7 +6,7 @@ Full Site Editing block theme for [Queens Botanical Garden](https://queensbotani
 
 ## Try it in WordPress Playground
 
-Launch a live demo (latest WordPress, theme installed and activated, Site Editor open):
+Launch a live demo (theme, plugins, and pages from `_playground/demo-content.xml`):
 
 **[Open demo in Playground →](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/azizramos00/qbg/main/_playground/blueprint.json)**
 
@@ -29,6 +29,14 @@ To add or remove plugins, edit the `plugins` array in `_playground/blueprint.jso
 
 - WordPress 6.4+
 - PHP 8.1+
+
+## Playground demo content
+
+On each new Playground session, the blueprint imports `_playground/demo-content.xml` (export from Local via **Tools → Export**) and sets the **Home** page (`home-2-2-2`) as the front page.
+
+After updating content on Local, replace `demo-content.xml`, commit, and push. The theme zip does not include this file (it is fetched separately during import).
+
+**Note:** Media URLs in the export still point at `queensbotanical.local`, so images may not load in Playground until those URLs are updated to public paths (e.g. `raw.githubusercontent.com` or your CDN).
 
 ## Development
 

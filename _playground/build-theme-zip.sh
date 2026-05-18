@@ -11,6 +11,7 @@ cd "$PARENT"
 zip -r "$OUT" "$NAME" \
 	-x "$NAME/.git/*" \
 	-x "$NAME/_playground/queens-botanical-block-theme.zip" \
+	-x "$NAME/_playground/demo-content.xml" \
 	-x "*/.DS_Store" \
 	-x "$NAME/node_modules/*"
 

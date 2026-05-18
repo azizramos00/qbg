@@ -1,3 +1,18 @@
+/*
+ * Patterns use layout.constrained in block markup; core caps direct children at
+ * content-size / wide-size. Full-width sections rely on .site-container--full-width
+ * for horizontal padding instead of that cap.
+ */
+.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: none;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.is-layout-constrained > .alignwide {
+	max-width: none;
+}
+
 .site-container--full-width {
 	flex: 0 0 auto;
 	flex-shrink: 0;

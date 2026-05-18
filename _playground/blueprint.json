@@ -41,6 +41,10 @@
 		{
 			"step": "activateTheme",
 			"themeFolderName": "queens-botanical-block-theme"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require_once '/wordpress/wp-load.php'; update_option( 'spectra_onboarding', array( 'completed' => true ) ); update_option( '__uagb_do_redirect', false ); ?>"
 		}
 	]
 }

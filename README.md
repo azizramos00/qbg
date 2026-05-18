@@ -25,6 +25,8 @@ The Playground blueprint installs and activates these plugins (matching the loca
 
 To add or remove plugins, edit the `plugins` array in `_playground/blueprint.json`. Use a [wordpress.org slug](https://wordpress.org/plugins/) or a public zip URL for custom plugins.
 
+Spectra’s setup wizard is skipped automatically via a blueprint step that marks onboarding complete.
+
 ## Requirements
 
 - WordPress 6.4+

@@ -14,12 +14,23 @@ defined( 'ABSPATH' ) || exit;
  *
  * @param string $slug    Post name.
  * @param string $title   Post title.
- * @param string $content Block markup.
+ * @param string $content          Block markup.
+ * @param bool   $update_if_exists Replace content when the page already exists.
  * @return int Post ID or 0 on failure.
  */
-function qbb_playground_upsert_page( string $slug, string $title, string $content ): int {
+function qbb_playground_upsert_page( string $slug, string $title, string $content, bool $update_if_exists = false ): int {
 	$existing = get_page_by_path( $slug, OBJECT, 'page' );
 	if ( $existing instanceof WP_Post ) {
+		if ( $update_if_exists ) {
+			wp_update_post(
+				array(
+					'ID'           => (int) $existing->ID,
+					'post_title'   => $title,
+					'post_content' => $content,
+				)
+			);
+		}
+
 		return (int) $existing->ID;
 	}
 
@@ -35,6 +46,32 @@ function qbb_playground_upsert_page( string $slug, string $title, string $conten
 	);
 
 	return is_wp_error( $id ) ? 0 : (int) $id;
+}
+
+/**
+ * Block markup for the Playground front page using theme patterns.
+ *
+ * @return string
+ */
+function qbb_playground_get_home_page_content(): string {
+	$patterns = array(
+		'queens-botanical-block/home-page-hero',
+		'queens-botanical-block/quick-home-actions',
+		'queens-botanical-block/explore-the-garden',
+		'queens-botanical-block/featured-events-sticky',
+		'queens-botanical-block/art-at-the-garden',
+		'queens-botanical-block/in-bloom-carousel',
+		'queens-botanical-block/education-section',
+		'queens-botanical-block/call-to-action-card-alt',
+		'queens-botanical-block/call-to-action-card',
+	);
+
+	$blocks = array();
+	foreach ( $patterns as $slug ) {
+		$blocks[] = sprintf( '<!-- wp:pattern {"slug":"%s"} /-->', esc_attr( $slug ) );
+	}
+
+	return implode( "\n\n", $blocks );
 }
 
 /**
@@ -145,57 +182,8 @@ function qbb_playground_upsert_event(
 $home_id = qbb_playground_upsert_page(
 	'home',
 	'Home',
-	'<!-- wp:cover {"overlayColor":"mallow","dimRatio":60,"isUserOverlayColor":true,"minHeight":420,"minHeightUnit":"px","align":"full"} -->
-<div class="wp-block-cover alignfull"><span aria-hidden="true" class="wp-block-cover__background has-mallow-background-color has-background-dim-60 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","level":1,"textColor":"base","fontSize":"huge"} -->
-<h1 class="wp-block-heading has-text-align-center has-base-color has-text-color has-huge-font-size">Queens Botanical Garden</h1>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large"} -->
-<p class="has-text-align-center has-base-color has-text-color has-large-font-size">Explore 39 acres of gardens, programs, and seasonal beauty in Flushing, Queens.</p>
-<!-- /wp:paragraph -->
-<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"rose","textColor":"base"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-rose-background-color has-text-color has-background wp-element-button" href="/about/">Plan your visit</a></div>
-<!-- /wp:button -->
-<!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/events/">See events</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons --></div></div>
-<!-- /wp:cover -->
-<!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Visit the garden</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Stroll seasonal displays, family programs, and quiet paths through our living collections.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p><a href="/about/">About the garden →</a></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Upcoming events</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Workshops, tours, and celebrations for all ages.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p><a href="/events/">Events calendar →</a></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Garden stories</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>News, tips, and behind-the-scenes looks at what is growing at QBG.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p><a href="/blog/">Read the blog →</a></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->'
+	qbb_playground_get_home_page_content(),
+	true
 );
 
 $blog_id = qbb_playground_upsert_page(

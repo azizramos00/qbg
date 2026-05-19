@@ -21,6 +21,13 @@
 	padding: 0 calc(var(--qbb-layout-full-width-spacing) / 2);
 }
 
+/* Call to action patterns: overlap image into copy row on desktop only. */
+@media (min-width: 993px) {
+	.callAction--media-asset {
+		margin-top: calc(var(--qbb-space-xxl) * -1) !important;
+	}
+}
+
 /* Call to action patterns: stack on small screens; copy before image. */
 @media (max-width: 992px) {
 	.site-container--full-width > .wp-block-group.is-layout-grid {

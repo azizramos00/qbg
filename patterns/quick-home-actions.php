@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<!-- wp:group {"className":"site-quick-home-actions","style":{"spacing":{"blockGap":"0","margin":{"top":"0px"}}},"backgroundColor":"rose","layout":{"type":"grid","columnCount":2,"minimumColumnWidth":null}} -->
+<!-- wp:group {"className":"site-quick-home-actions","style":{"spacing":{"blockGap":"0","margin":{"top":"0px"}}},"backgroundColor":"rose","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group site-quick-home-actions has-rose-background-color has-background" style="margin-top:0px"><!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"padding":{"top":"var:preset|spacing|m","bottom":"var:preset|spacing|m"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--m);padding-bottom:var(--wp--preset--spacing--m)"><!-- wp:uagb/icon {"icon":"ticket","iconSize":32,"iconColor":"#ffffff","block_id":"c556a26f"} /-->
 

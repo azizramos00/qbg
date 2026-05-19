@@ -49,6 +49,16 @@
 }
 
 @media (max-width: 992px) {
+	/* Quick home actions: 4 across on desktop, 2×2 on mobile. */
+	.site-quick-home-actions.is-layout-flex {
+		display: grid !important;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.site-quick-home-actions.is-layout-flex > .wp-block-group {
+		inline-size: auto;
+		min-inline-size: 0;
+	}
 
   .site-exploreGarden--container {
     padding-inline: 0;

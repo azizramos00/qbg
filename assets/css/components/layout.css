@@ -21,10 +21,15 @@
 	padding: 0 calc(var(--qbb-layout-full-width-spacing) / 2);
 }
 
+.site-container--full-width.callAction--card {
+	margin-top: var(--qbb-space-l);
+	margin-bottom: var(--qbb-space-m);
+}
+
 /* Call to action patterns: overlap image into copy row on desktop only. */
 @media (min-width: 993px) {
 	.callAction--media-asset {
-		margin-top: calc(var(--qbb-space-xxl) * -1) !important;
+		margin-top: calc(var(--qbb-space-m) * -1) !important;
 	}
 }
 

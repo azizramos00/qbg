@@ -13,13 +13,14 @@
 	/* -------------------------------------------------------------------------
 	   Spacing (theme.json spacingSizes)
 	   ------------------------------------------------------------------------- */
-	--qbb-space-xs: 0.5rem; /* 8px */
-	--qbb-space-sm: 0.75rem; /* 12px */
-	--qbb-space-s: 1rem; /* 16px */
-	--qbb-space-m: 1.5rem; /* 24px */
-	--qbb-space-l: 2rem; /* 32px */
-	--qbb-space-xl: 3rem; /* 48px */
-	--qbb-space-xxl: 4rem; /* 64px */
+	--qbb-space-micro: calc(0.5rem + 0.25vw); /* 8px */
+	--qbb-space-xxs: calc(1rem + 0.5vw); /* 16px */
+	--qbb-space-xs: calc(1.5rem + 0.75vw); /* 24px */
+	--qbb-space-s: calc(2rem + 1vw); /* 32px */
+	--qbb-space-m: calc(3rem + 1.5vw); /* 48px */
+	--qbb-space-l: calc(4rem + 2vw); /* 64px */
+	--qbb-space-xl: calc(6rem + 6vw); /* 96px */
+	--qbb-space-xxl: calc(8rem + 9vw); /* 128px */
 
 	/* -------------------------------------------------------------------------
 	   Typography — static rem (fluid clamp lives in theme.json for presets)

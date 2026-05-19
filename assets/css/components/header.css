@@ -60,6 +60,14 @@ body.admin-bar .site-header {
 	gap: var(--qbb-space-s) var(--qbb-space-m);
 	justify-content: flex-end;
 	min-width: 0;
+	align-content: end;
+}
+
+@media (min-width: 1108px) {
+	.site-header .site-header__actions > .wp-block-group {
+		inline-size: 100%;
+		justify-content: flex-end;
+	}
 }
 
 .site-header .site-header__actions .wp-block-queens-botanical-block-hours-of-operation {

@@ -8,6 +8,8 @@
 declare(strict_types=1);
 
 defined( 'ABSPATH' ) || exit;
+
+$qbb_cta_image_url = esc_url( get_template_directory_uri() . '/assets/images/cta/call-to-action-membership.jpg' );
 ?>
 <!-- wp:group {"className":"site-container\u002d\u002dfull-width","layout":{"type":"default"}} -->
 <div class="wp-block-group site-container--full-width"><!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|m","left":"var:preset|spacing|m","top":"var:preset|spacing|m","bottom":"var:preset|spacing|m"}},"color":{"background":"#faf7e1"},"border":{"radius":{"topLeft":"24px","topRight":"24px","bottomLeft":"24px","bottomRight":"24px"}}},"layout":{"type":"grid","columnCount":12,"minimumColumnWidth":null}} -->
@@ -28,8 +30,8 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"callAction\u002d\u002dmedia-asset","style":{"layout":{"columnSpan":7}},"layout":{"type":"default"}} -->
-<div class="wp-block-group callAction--media-asset"><!-- wp:uagb/image {"block_id":"29d41216","url":"http://queensbotanical.local/wp-content/uploads/2026/05/2025.08.02-Queens-Botanical-Garden-@seanchee-47-1024x683.jpg","urlTablet":"http://queensbotanical.local/wp-content/uploads/2026/05/2025.08.02-Queens-Botanical-Garden-@seanchee-47-scaled.jpg","urlMobile":"http://queensbotanical.local/wp-content/uploads/2026/05/2025.08.02-Queens-Botanical-Garden-@seanchee-47-scaled.jpg","id":474937,"linkDestination":"none","title":"2025.08.02 Queens Botanical Garden @seanchee-47","naturalWidth":3070,"naturalHeight":2048,"sizeSlug":"large","sizeSlugTablet":"large","sizeSlugMobile":"large","imageBorderTopLeftRadius":16,"imageBorderTopRightRadius":16,"imageBorderBottomLeftRadius":16,"imageBorderBottomRightRadius":16,"style":{"layout":{"columnSpan":7}}} -->
-<div class="wp-block-uagb-image uagb-block-29d41216 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img srcset="http://queensbotanical.local/wp-content/uploads/2026/05/2025.08.02-Queens-Botanical-Garden-@seanchee-47-1024x683.jpg ,http://queensbotanical.local/wp-content/uploads/2026/05/2025.08.02-Queens-Botanical-Garden-@seanchee-47-scaled.jpg 780w, http://queensbotanical.local/wp-content/uploads/2026/05/2025.08.02-Queens-Botanical-Garden-@seanchee-47-scaled.jpg 360w" sizes="(max-width: 480px) 150px" src="http://queensbotanical.local/wp-content/uploads/2026/05/2025.08.02-Queens-Botanical-Garden-@seanchee-47-1024x683.jpg" alt="" class="uag-image-474937" width="3070" height="2048" title="2025.08.02 Queens Botanical Garden @seanchee-47" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-group callAction--media-asset"><!-- wp:uagb/image {"block_id":"29d41216","url":"<?php echo esc_url( $qbb_cta_image_url ); ?>","urlTablet":"<?php echo esc_url( $qbb_cta_image_url ); ?>","urlMobile":"<?php echo esc_url( $qbb_cta_image_url ); ?>","linkDestination":"none","title":"Queens Botanical Garden","naturalWidth":3070,"naturalHeight":2048,"sizeSlug":"large","sizeSlugTablet":"large","sizeSlugMobile":"large","imageBorderTopLeftRadius":16,"imageBorderTopRightRadius":16,"imageBorderBottomLeftRadius":16,"imageBorderBottomRightRadius":16,"style":{"layout":{"columnSpan":7}}} -->
+<div class="wp-block-uagb-image uagb-block-29d41216 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img src="<?php echo esc_url( $qbb_cta_image_url ); ?>" alt="Visitors at Queens Botanical Garden" class="uag-image-qbb-cta-membership" width="1024" height="683" loading="lazy" role="img"/></figure></div>
 <!-- /wp:uagb/image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

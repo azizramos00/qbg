@@ -333,6 +333,7 @@ body.admin-bar .site-header {
 		justify-content: flex-end;
 		min-width: min(12rem, 100%);
 		width: auto;
+		align-content: end;
 	}
 
 	.site-header .wp-block-search {

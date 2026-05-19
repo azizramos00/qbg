@@ -1,24 +1,54 @@
-<!-- wp:group {"align":"full","className":"site-header","layout":{"type":"default"},"tagName":"header","style":{"color":{"background":"var:preset|color|cream"}}}} -->
-<header class="wp-block-group alignfull site-header">
-	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|m"}}} -->
+<!-- wp:group {"align":"full","className":"site-header","tagName":"header","backgroundColor":"base","layout":{"type":"default"}} -->
+<header class="wp-block-group alignfull site-header has-base-background-color has-background">
+	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|m"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 	<div class="wp-block-group">
-		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|s"}}} -->
+		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|s"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 		<div class="wp-block-group">
-			<!-- wp:site-logo {"width":72,"shouldSyncIcon":true} /-->
+			<!-- wp:site-logo {"width":189,"shouldSyncIcon":false} /-->
 		</div>
 		<!-- /wp:group -->
-		
+
+		<!-- wp:group {"className":"site-header__actions","style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"wrap","justifyContent":"right"}} -->
 		<div class="wp-block-group site-header__actions">
-			<!-- wp:queens-botanical-block/hours-of-operation {"className":"is-style-qbb-hours-header-inline","showHeading":false,"showTodaySummary":false,"highlightToday":false} /-->
+			<!-- wp:group {"className":"site-Header\u002d\u002dtop-rack","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+			<div class="wp-block-group site-Header--top-rack">
+				<!-- wp:shortcode {"UAGHideMob":true,"UAGHideTab":true,"UAGResponsiveConditions":true} -->
+				[open_now]Open today [open_text]%hours_today%[/open_text][/open_now] [closed_now]Closed Today • Opens [open_text]%tomorrow%[/open_text] at [open_text]%tomorrow_start%[/open_text][/closed_now]
+				<!-- /wp:shortcode -->
 
-			<div class="wp-block-group site-header__navigation">
-				<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap","setCascadingProperties":true},"style":{"spacing":{"blockGap":"var:preset|spacing|m"}}} /-->
-	
-				<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search…","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"9999px"}},"width":14,"widthUnit":"rem"} /-->
+				<!-- wp:buttons {"style":{"spacing":{"blockGap":{"left":"0"}},"border":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"8px","bottomRight":"8px"},"top":{"radius":{"topLeft":"8px","topRight":"8px","bottomLeft":"8px","bottomRight":"8px"},"width":"0px","style":"none"},"right":{"color":"var:preset|color|rose","width":"2px"},"bottom":{"color":"var:preset|color|rose","width":"2px"},"left":{"color":"var:preset|color|rose","width":"2px"}}},"UAGHideMob":true,"UAGHideTab":true,"UAGResponsiveConditions":true} -->
+				<div class="wp-block-buttons uag-hide-tab uag-hide-mob" style="border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;border-top-style:none;border-top-width:0px;border-right-color:var(--wp--preset--color--rose);border-right-width:2px;border-bottom-color:var(--wp--preset--color--rose);border-bottom-width:2px;border-left-color:var(--wp--preset--color--rose);border-left-width:2px">
+					<!-- wp:button {"textColor":"primary","className":"is-style-outline","style":{"spacing":{"padding":{"top":"8px","bottom":"8px"}},"border":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"0px","bottomRight":"0px"},"top":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"0px","bottomRight":"0px"},"width":"0px","style":"none"},"right":{"color":"var:preset|color|rose","width":"2px"},"bottom":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"0px","bottomRight":"0px"},"width":"0px","style":"none"},"left":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"0px","bottomRight":"0px"},"width":"0px","style":"none"}},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"color":{"background":"#ffffff00"},"typography":{"fontSize":"16px"}}} -->
+					<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-primary-color has-text-color has-background has-link-color has-custom-font-size wp-element-button" style="border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-style:none;border-top-width:0px;border-right-color:var(--wp--preset--color--rose);border-right-width:2px;border-bottom-style:none;border-bottom-width:0px;border-left-style:none;border-left-width:0px;background-color:#ffffff00;padding-top:8px;padding-bottom:8px;font-size:16px">Become a member</a></div>
+					<!-- /wp:button -->
+
+					<!-- wp:button {"textColor":"primary","style":{"spacing":{"padding":{"top":"8px","bottom":"8px"}},"border":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"0px","bottomRight":"0px"}},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"color":{"background":"#ffffff00"},"typography":{"fontSize":"16px"}}} -->
+					<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-text-color has-background has-link-color has-custom-font-size wp-element-button" style="border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;background-color:#ffffff00;padding-top:8px;padding-bottom:8px;font-size:16px">Donate</a></div>
+					<!-- /wp:button -->
+
+					<!-- wp:button {"backgroundColor":"rose","style":{"spacing":{"padding":{"top":"8px","bottom":"8px"}},"border":{"radius":{"topLeft":"0px","topRight":"0px","bottomLeft":"0px","bottomRight":"0px"}},"typography":{"fontSize":"16px"}}} -->
+					<div class="wp-block-button"><a class="wp-block-button__link has-rose-background-color has-background has-custom-font-size wp-element-button" style="border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;padding-top:8px;padding-bottom:8px;font-size:16px">Get tickets</a></div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
 			</div>
-		</div>
-		
+			<!-- /wp:group -->
 
+			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+			<div class="wp-block-group">
+				<!-- wp:buttons {"UAGHideDesktop":true,"UAGHideTab":true,"UAGResponsiveConditions":true} -->
+				<div class="wp-block-buttons uag-hide-desktop uag-hide-tab">
+					<!-- wp:button {"backgroundColor":"rose","style":{"border":{"radius":{"topLeft":"999px","topRight":"999px","bottomLeft":"999px","bottomRight":"999px"}},"spacing":{"padding":{"left":"16px","right":"16px","top":"8px","bottom":"8px"}}},"UAGResponsiveConditions":true} -->
+					<div class="wp-block-button"><a class="wp-block-button__link has-rose-background-color has-background wp-element-button" style="border-top-left-radius:999px;border-top-right-radius:999px;border-bottom-left-radius:999px;border-bottom-right-radius:999px;padding-top:8px;padding-right:16px;padding-bottom:8px;padding-left:16px">Get tickets</a></div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
+
+				<!-- wp:navigation {"openSubmenusOnClick":true,"icon":"menu","className":"site-header__navigation","style":{"spacing":{"blockGap":"var:preset|spacing|m"},"typography":{"fontSize":"20px"}},"layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap","setCascadingProperties":true}} /-->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </header>

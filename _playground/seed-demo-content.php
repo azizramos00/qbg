@@ -59,8 +59,6 @@ function qbb_playground_get_home_page_content(): string {
 		'queens-botanical-block/quick-home-actions',
 		'queens-botanical-block/explore-the-garden',
 		'queens-botanical-block/featured-events-sticky',
-		'queens-botanical-block/art-at-the-garden',
-		'queens-botanical-block/in-bloom-carousel',
 		'queens-botanical-block/education-section',
 		'queens-botanical-block/call-to-action-card-alt',
 		'queens-botanical-block/call-to-action-card',

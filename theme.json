@@ -19,6 +19,11 @@
 					"slug": "rose"
 				},
 				{
+					"color": "#a32252",
+					"name": "Rose Dark",
+					"slug": "rose-dark"
+				},
+				{
 					"color": "#603a93",
 					"name": "Mallow",
 					"slug": "mallow"
@@ -251,33 +256,35 @@
 			},
 			"button": {
 				"border": {
-					"radius": "4px"
+					"radius": "999em"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--hasta)",
+					"background": "var(--wp--preset--color--rose)",
 					"text": "var(--wp--preset--color--base)"
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--holly)"
+						"background": "var(--wp--preset--color--rose-dark)"
 					}
 				}
 			},
 			"heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--mark-pro)",
-					"fontWeight": "700",
+					"fontWeight": "900",
 					"lineHeight": "1.2"
 				}
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--huge)"
+					"fontSize": "var(--wp--preset--font-size--huge)",
+					"fontWeight": "900"
 				}
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--x-large)"
+					"fontSize": "var(--wp--preset--font-size--x-large)",
+					"fontWeight": "900"
 				}
 			}
 		},
@@ -300,10 +307,9 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--mark-pro)",
-					"fontSize": "0.8125rem",
+					"fontSize": "20px",
 					"fontWeight": "600",
-					"letterSpacing": "0.08em",
-					"textTransform": "uppercase"
+					"letterSpacing": "0.08em"
 				}
 			},
 			"core/search": {

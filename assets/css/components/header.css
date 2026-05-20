@@ -306,7 +306,7 @@ body.admin-bar .site-header {
 	color: var(--wp--preset--color--base);
 	border: none;
 	min-height: var(--qbb-header-control-height);
-	padding-inline: var(--qbb-space-sm);
+	padding-inline: var(--qbb-space-s);
 }
 
 .site-header .wp-block-search__button:hover,

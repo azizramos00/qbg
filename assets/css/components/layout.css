@@ -1,33 +1,50 @@
 /*
- * Patterns use layout.constrained in block markup; core caps direct children at
- * content-size / wide-size. Full-width sections rely on .site-container--full-width
- * for horizontal padding instead of that cap.
+ * Pattern sections (.site-container--full-width): centered wide band at min(85vw, 1600px).
+ * Header/footer: full bleed with gutter padding via --qbb-layout-full-width-spacing.
+ * Inner layout.constrained groups must not cap below the wide band; blog/single templates
+ * keep theme.json contentSize (1200px) on their own constrained layouts.
  */
-.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+.site-container--full-width.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+.site-container--full-width .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
 	max-width: none;
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
 
-.is-layout-constrained > .alignwide {
+.site-container--full-width.is-layout-constrained > .alignwide,
+.site-container--full-width .is-layout-constrained > .alignwide {
 	max-width: none;
 }
 
+/* Single blog post (templates/single.html) — narrower than default contentSize. */
+body.single-post main.site-single-post.is-layout-constrained,
+body.single-post main.site-single-post.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
+body.single-post .wp-block-post-content.is-layout-constrained,
+body.single-post .wp-block-post-content.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: var(--qbb-layout-blog);
+}
+
 .site-container--full-width {
+	box-sizing: border-box;
 	flex: 0 0 auto;
 	flex-shrink: 0;
-	max-width: 100%;
+	width: 100%;
+	max-width: var(--qbb-layout-full-width-max);
 	min-width: 0;
-	padding: 0 calc(var(--qbb-layout-full-width-spacing) / 2);
+	margin-inline: auto;
 }
 
 .site-container--full-width.callAction--card {
-	margin-top: var(--qbb-space-l);
-	margin-bottom: var(--qbb-space-m);
+	margin-top: var(--qbb-space-l) !important;
+	margin-bottom: var(--qbb-space-m) !important;
 }
 
 /* Call to action patterns: overlap image into copy row on desktop only. */
 @media (min-width: 993px) {
+	.site-container--full-width.callAction--card {
+		margin-top: var(--qbb-space-xl) !important;
+	}
+
 	.callAction--media-asset {
 		margin-top: calc(var(--qbb-space-m) * -1) !important;
 	}

@@ -5,8 +5,8 @@
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
 		"layout": {
-			"contentSize": "min(calc(85vw - (100vw - 100%)), 1600px)",
-			"wideSize": "min(calc(85vw - (100vw - 100%)), 1600px)"
+			"contentSize": "1200px",
+			"wideSize": "min(85vw, 1600px)"
 		},
 		"color": {
 			"defaultDuotone": false,
@@ -258,6 +258,14 @@
 				"border": {
 					"radius": "999em"
 				},
+				"spacing": {
+					"padding": {
+						"top": "10px",
+						"right": "24px",
+						"bottom": "10px",
+						"left": "24px"
+					}
+				},
 				"color": {
 					"background": "var(--wp--preset--color--rose)",
 					"text": "var(--wp--preset--color--base)"
@@ -338,6 +346,11 @@
 			"area": "uncategorized",
 			"name": "sidebar",
 			"title": "Sidebar"
+		},
+		{
+			"area": "uncategorized",
+			"name": "sidebar-programs",
+			"title": "Programs Sidebar"
 		}
 	],
 	"customTemplates": [
@@ -350,6 +363,11 @@
 			"name": "full-width",
 			"postTypes": [ "page" ],
 			"title": "Full Width"
+		},
+		{
+			"name": "programs",
+			"postTypes": [ "page" ],
+			"title": "Programs"
 		}
 	]
 }

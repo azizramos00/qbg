@@ -93,7 +93,7 @@
 	align-items: baseline;
 	box-sizing: border-box;
 	display: grid;
-	gap: var(--qbb-space-sm) var(--qbb-space-m);
+	gap: var(--qbb-space-s) var(--qbb-space-m);
 	grid-template-columns: minmax(3.25rem, auto) minmax(0, 1fr);
 	padding: 0.65rem 0;
 }

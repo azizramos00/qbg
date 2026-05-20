@@ -1,0 +1,99 @@
+/*
+ * Program sidebar — Steps to booking (Figma 2525:9149).
+ * Warm grey card, peony timeline dots and connector.
+ */
+
+.qbb-program-booking-steps__card {
+	background-color: #d6d1c2;
+	border-radius: 16px;
+	color: var(--wp--preset--color--primary);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	overflow: hidden;
+	padding: 24px;
+}
+
+.qbb-program-booking-steps__intro {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding-bottom: 16px;
+}
+
+.qbb-program-booking-steps__heading {
+	font-size: 1.5rem; /* 24px */
+	font-weight: 700;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.qbb-program-booking-steps__description {
+	font-size: 1rem; /* 16px */
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.qbb-program-booking-steps__list {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.qbb-program-booking-steps__step {
+	display: flex;
+	gap: 10px;
+	margin: 0;
+}
+
+.qbb-program-booking-steps__rail {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	width: 24px;
+}
+
+.qbb-program-booking-steps__dot {
+	background-color: var(--wp--preset--color--peony);
+	border-radius: 50%;
+	flex-shrink: 0;
+	height: 24px;
+	width: 24px;
+}
+
+.qbb-program-booking-steps__line {
+	background-color: var(--wp--preset--color--peony);
+	flex: 1 1 auto;
+	margin-top: 0;
+	min-height: 20px;
+	width: 2px;
+}
+
+.qbb-program-booking-steps__content {
+	flex: 1 1 auto;
+	min-width: 0;
+	padding-bottom: 20px;
+}
+
+.qbb-program-booking-steps__step--last .qbb-program-booking-steps__content {
+	padding-bottom: 0;
+}
+
+.qbb-program-booking-steps__step-title {
+	font-size: 1.25rem; /* 20px */
+	font-weight: 700;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.qbb-program-booking-steps__step-description {
+	font-size: 1rem; /* 16px */
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0;
+}

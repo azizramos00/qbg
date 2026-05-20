@@ -9,6 +9,11 @@ declare(strict_types=1);
 
 defined( 'ABSPATH' ) || exit;
 
+require_once get_template_directory() . '/inc/program-page-helpers.php';
+require_once get_template_directory() . '/inc/program-page-cta.php';
+require_once get_template_directory() . '/inc/program-page-booking-steps.php';
+require_once get_template_directory() . '/inc/program-page-description.php';
+
 /**
  * Component styles. Tokens must load before components that use var(--qbb-*).
  *
@@ -35,6 +40,10 @@ function qbb_style_components(): array {
 		'queens-botanical-block-home' => array(
 			'path' => 'assets/css/components/home.css',
 			'deps' => array( 'queens-botanical-block', 'queens-botanical-block-tokens' ),
+		),
+		'queens-botanical-block-programs' => array(
+			'path' => 'assets/css/components/programs.css',
+			'deps' => array( 'queens-botanical-block', 'queens-botanical-block-tokens', 'queens-botanical-block-layout' ),
 		),
 		'queens-botanical-block-cards' => array(
 			'path' => 'assets/css/components/cards.css',
@@ -344,6 +353,9 @@ function qbb_register_theme_blocks(): void {
 	$blocks = array(
 		'hours-of-operation',
 		'nyc-temperature',
+		'program-sidebar-cta',
+		'program-sidebar-booking-steps',
+		'program-description',
 	);
 	foreach ( $blocks as $slug ) {
 		$dir = get_template_directory() . '/blocks/' . $slug;

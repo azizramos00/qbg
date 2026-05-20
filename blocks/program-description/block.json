@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "queens-botanical-block/program-description",
+	"version": "1.0.0",
+	"title": "Program description",
+	"category": "widgets",
+	"icon": "text",
+	"description": "Intro description for Programs pages. Edit under Page → Program description (Programs template only).",
+	"keywords": [ "programs", "description", "intro" ],
+	"textdomain": "queens-botanical-block",
+	"usesContext": [ "postId", "postType" ],
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"inserter": false
+	},
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

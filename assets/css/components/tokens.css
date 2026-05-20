@@ -1,7 +1,8 @@
 /*
  * Sizing tokens — rem first, px noted at 16px root (browser default).
- * Mirrors theme.json settings.spacing.spacingSizes and typography fontSizes (static size).
- * Prefer var(--wp--preset--spacing|font-size--*) in blocks; use --qbb-* in custom CSS.
+ * Typography static sizes mirror theme.json fontSizes.
+ * Spacing: --qbb-space-* are fluid component tokens (custom CSS only).
+ * Block markup / Site Editor: use var(--wp--preset--spacing--*) from theme.json.
  */
 
 :root {
@@ -11,7 +12,7 @@
 	--qbb-rem-px: 16;
 
 	/* -------------------------------------------------------------------------
-	   Spacing (theme.json spacingSizes)
+	   Spacing — fluid scale for component CSS (not theme.json presets)
 	   ------------------------------------------------------------------------- */
 	--qbb-space-micro: calc(0.5rem + 0.25vw); /* 8px */
 	--qbb-space-xxs: calc(1rem + 0.5vw); /* 16px */
@@ -37,11 +38,12 @@
 	/* -------------------------------------------------------------------------
 	   Layout (theme.json settings.layout)
 	   ------------------------------------------------------------------------- */
-	--qbb-layout-content: min(calc(85vw - (100vw - 100%)), 1600px);
-	--qbb-layout-wide: min(calc(85vw - (100vw - 100%)), 1600px);
-	--qbb-layout-full: 1600px;
+	--qbb-layout-content: 1200px;
+	--qbb-layout-blog: 960px; /* single post reading width */
+	--qbb-layout-wide: min(85vw, 1600px);
 	--qbb-layout-full-width-max: min(85vw, 1600px);
-	--qbb-layout-full-width-spacing: calc((100% - var(--qbb-layout-full-width-max)) / 2);
+	/* Side gutters for header/footer; explore-the-garden mobile bleed uses this too. */
+	--qbb-layout-full-width-spacing: max(0px, calc((100vw - var(--qbb-layout-full-width-max)) / 2));
 
 	/* -------------------------------------------------------------------------
 	   Component helpers (not in theme.json — use in components only)

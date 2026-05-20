@@ -1,0 +1,14 @@
+/*
+ * Program description — intro below hero (Figma Kids Programs intro band).
+ */
+
+.qbb-program-description__inner {
+	max-width: var(--qbb-layout-full-width-max, min(85vw, 1600px));
+}
+
+.qbb-program-description__text {
+	font-size: var(--wp--preset--font-size--medium, 1.125rem);
+	line-height: 1.5;
+	margin: 0;
+	max-width: 54rem;
+}

@@ -1,0 +1,75 @@
+/*
+ * Program sidebar CTA — Figma Card 747:10672 (registration CTA).
+ * Rose panel, white type, white pill button with dark label.
+ */
+
+.qbb-program-sidebar-cta__card {
+	background-color: var(--wp--preset--color--rose);
+	border-radius: 16px;
+	color: var(--wp--preset--color--base);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	overflow: hidden;
+	padding: 24px;
+}
+
+.qbb-program-sidebar-cta__heading {
+	font-size: 1.5rem; /* 24px */
+	font-weight: 700;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.qbb-program-sidebar-cta__body {
+	font-size: 1rem; /* 16px */
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0;
+	padding-bottom: 6px;
+}
+
+.qbb-program-sidebar-cta__buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0;
+}
+
+.qbb-program-sidebar-cta__buttons .wp-block-button {
+	margin: 0;
+}
+
+.qbb-program-sidebar-cta__buttons .wp-block-button__link {
+	background-color: var(--wp--preset--color--base) !important;
+	border: 2px solid var(--wp--preset--color--base) !important;
+	border-radius: 999em !important;
+	color: var(--wp--preset--color--primary) !important;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.25;
+	padding: 10px 16px !important;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.qbb-program-sidebar-cta__buttons .wp-block-button__link:hover,
+.qbb-program-sidebar-cta__buttons .wp-block-button__link:focus {
+	background-color: var(--wp--preset--color--cream) !important;
+	border-color: var(--wp--preset--color--cream) !important;
+	color: var(--wp--preset--color--primary) !important;
+}
+
+/* Optional second button: outline on rose */
+.qbb-program-sidebar-cta__buttons .wp-block-button.is-style-outline .wp-block-button__link {
+	background-color: transparent !important;
+	border-color: var(--wp--preset--color--base) !important;
+	color: var(--wp--preset--color--base) !important;
+}
+
+.qbb-program-sidebar-cta__buttons .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.qbb-program-sidebar-cta__buttons .wp-block-button.is-style-outline .wp-block-button__link:focus {
+	background-color: rgba(255, 255, 255, 0.12) !important;
+	color: var(--wp--preset--color--base) !important;
+}

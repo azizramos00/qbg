@@ -348,6 +348,20 @@ function qbb_register_categories_for_pages(): void {
 add_action( 'init', 'qbb_register_categories_for_pages', 0 );
 
 /**
+ * Editor helper: preserve block.json settings when editor.js adds edit/save.
+ */
+function qbb_register_block_editor_shared_scripts(): void {
+	wp_register_script(
+		'queens-botanical-block-reregister-block-edit',
+		get_template_directory_uri() . '/blocks/shared/reregister-block-edit.js',
+		array( 'wp-blocks' ),
+		'1.0.0',
+		true
+	);
+}
+add_action( 'init', 'qbb_register_block_editor_shared_scripts', 9 );
+
+/**
  * Register theme blocks (block.json under /blocks).
  */
 function qbb_register_theme_blocks(): void {

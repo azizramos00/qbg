@@ -1,15 +1,14 @@
 /**
  * Program sidebar CTA — editor placeholder (fields live in Page sidebar panel).
  */
-( function ( blocks, element, blockEditor, components, data, i18n ) {
-	const { registerBlockType } = blocks;
+( function ( element, blockEditor, components, data, i18n ) {
 	const { createElement: el } = element;
 	const { useBlockProps } = blockEditor;
 	const { Placeholder, ExternalLink } = components;
 	const { useSelect } = data;
 	const { __ } = i18n;
 
-	registerBlockType( 'queens-botanical-block/program-sidebar-cta', {
+	window.qbbRegisterDynamicBlockEdit( 'queens-botanical-block/program-sidebar-cta', {
 		edit: function () {
 			const blockProps = useBlockProps( {
 				className: 'qbb-program-sidebar-cta-editor',
@@ -96,4 +95,4 @@
 			return null;
 		},
 	} );
-} )( window.wp.blocks, window.wp.element, window.wp.blockEditor, window.wp.components, window.wp.data, window.wp.i18n );
+} )( window.wp.element, window.wp.blockEditor, window.wp.components, window.wp.data, window.wp.i18n );

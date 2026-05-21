@@ -99,3 +99,97 @@
 		transform: none;
 	}
 }
+
+/*
+ * Program card — Figma Card Border / Variant=Program (1110:15564).
+ * Pattern: patterns/program-card.php
+ */
+
+.wp-block-group.is-style-qbb-program-card {
+	background-color: var(--wp--preset--color--base);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 16px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+	padding: 12px;
+}
+
+.wp-block-group.is-style-qbb-program-card > .wp-block-image,
+.wp-block-group.is-style-qbb-program-card > figure.wp-block-image {
+	flex-shrink: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.wp-block-group.is-style-qbb-program-card .qbb-program-card__media img {
+	aspect-ratio: 451 / 230;
+	border-radius: 8px;
+	display: block;
+	height: auto;
+	max-height: 230px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.wp-block-group.is-style-qbb-program-card .qbb-program-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.wp-block-group.is-style-qbb-program-card .qbb-program-card__meta {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.wp-block-group.is-style-qbb-program-card .qbb-program-card__label {
+	background-color: var(--wp--preset--color--sage);
+	border-radius: 20px;
+	color: #4a6741;
+	font-size: 0.625rem;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 1;
+	margin: 0;
+	padding: 3px 10px;
+	text-transform: uppercase;
+}
+
+.wp-block-group.is-style-qbb-program-card .qbb-program-card__price {
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0;
+}
+
+.wp-block-group.is-style-qbb-program-card .qbb-program-card__title {
+	margin: 0;
+}
+
+.wp-block-group.is-style-qbb-program-card .qbb-program-card__description {
+	margin: 0;
+	padding-bottom: 6px;
+}
+
+.wp-block-button.is-style-qbb-program-card-link .wp-block-button__link {
+	background: transparent !important;
+	border: none !important;
+	border-radius: 999em;
+	color: var(--wp--preset--color--primary) !important;
+	font-size: 1.25rem;
+	font-weight: 700;
+	padding: 12px 0 !important;
+	text-align: left;
+}
+
+.wp-block-button.is-style-qbb-program-card-link .wp-block-button__link:hover,
+.wp-block-button.is-style-qbb-program-card-link .wp-block-button__link:focus {
+	color: var(--wp--preset--color--rose) !important;
+}

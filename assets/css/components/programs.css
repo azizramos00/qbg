@@ -58,6 +58,35 @@
 	gap: var(--qbb-space-m);
 }
 
+/* Program section pattern — single program detail in post content */
+.site-program-section__media img {
+	border-radius: 16px;
+	display: block;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.site-program-section__eyebrow {
+	color: var(--wp--preset--color--english-walnut);
+	font-weight: 600;
+	margin: 0;
+	opacity: 0.85;
+}
+
+.site-program-section .wp-block-heading {
+	margin: 0;
+}
+
+.site-program-section-grid .wp-block-columns {
+	align-items: stretch;
+}
+
+.site-program-section-grid .wp-block-column {
+	display: flex;
+	flex-direction: column;
+}
+
 @media (max-width: 992px) {
 	.site-programs__columns.is-layout-flex {
 		flex-direction: column !important;

@@ -324,6 +324,7 @@ function qbb_register_pattern_categories(): void {
 		'home'                   => __( 'Home', 'queens-botanical-block' ),
 		'featured-events'        => __( 'Featured Events', 'queens-botanical-block' ),
 		'botanical-highlights'   => __( 'Botanical Highlights', 'queens-botanical-block' ),
+		'programs'               => __( 'Programs', 'queens-botanical-block' ),
 	);
 
 	foreach ( $categories as $slug => $label ) {
@@ -375,6 +376,20 @@ function qbb_register_block_styles(): void {
 		array(
 			'name'  => 'qbb-garden-card',
 			'label' => __( 'Garden card', 'queens-botanical-block' ),
+		)
+	);
+	register_block_style(
+		'core/group',
+		array(
+			'name'  => 'qbb-program-card',
+			'label' => __( 'Program card', 'queens-botanical-block' ),
+		)
+	);
+	register_block_style(
+		'core/button',
+		array(
+			'name'  => 'qbb-program-card-link',
+			'label' => __( 'Program card link', 'queens-botanical-block' ),
 		)
 	);
 	register_block_style(

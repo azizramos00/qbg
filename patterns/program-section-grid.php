@@ -13,6 +13,8 @@
 declare(strict_types=1);
 
 defined( 'ABSPATH' ) || exit;
+
+$qbb_program_card_markup = __DIR__ . '/../inc/pattern-markup/program-card.php';
 ?>
 <!-- wp:group {"className":"site-program-section-grid site-container\u002d\u002dfull-width","style":{"spacing":{"margin":{"top":"var:preset|spacing|l","bottom":"var:preset|spacing|l"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group site-program-section-grid site-container--full-width" style="margin-top:var(--wp--preset--spacing--l);margin-bottom:var(--wp--preset--spacing--l)">
@@ -24,19 +26,19 @@ defined( 'ABSPATH' ) || exit;
 	<div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--m)">
 		<!-- wp:column -->
 		<div class="wp-block-column">
-			<!-- wp:pattern {"slug":"queens-botanical-block/program-card"} /-->
+			<?php require $qbb_program_card_markup; ?>
 		</div>
 		<!-- /wp:column -->
 
 		<!-- wp:column -->
 		<div class="wp-block-column">
-			<!-- wp:pattern {"slug":"queens-botanical-block/program-card"} /-->
+			<?php require $qbb_program_card_markup; ?>
 		</div>
 		<!-- /wp:column -->
 
 		<!-- wp:column -->
 		<div class="wp-block-column">
-			<!-- wp:pattern {"slug":"queens-botanical-block/program-card"} /-->
+			<?php require $qbb_program_card_markup; ?>
 		</div>
 		<!-- /wp:column -->
 	</div>

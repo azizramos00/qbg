@@ -53,7 +53,7 @@ body.home .wp-site-blocks > .wp-block-template-part + main {
 	max-width: 100%;
 	min-width: 0;
 	height: calc(100vh - 128px);
-	padding: 0 calc(var(--qbb-layout-full-width-spacing) / 2);
+	padding: 0 calc(var(--qbb-layout-full-width-spacing));
 }
  
 .site-HomeHero--container .wp-block-cover__inner-container {
